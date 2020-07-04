@@ -1,0 +1,12 @@
+[03-Jul-2020 10:56:00 UTC] PHP Warning:  include(../footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/vieweid.php on line 73
+[03-Jul-2020 10:56:00 UTC] PHP Warning:  include(../footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/vieweid.php on line 73
+[03-Jul-2020 10:56:00 UTC] PHP Warning:  include(): Failed opening '../footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/ferroknb/public_html/user/vieweid.php on line 73
+[03-Jul-2020 10:56:06 UTC] PHP Warning:  include(..inlude/footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/viewattendanceuser.php on line 130
+[03-Jul-2020 10:56:06 UTC] PHP Warning:  include(..inlude/footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/viewattendanceuser.php on line 130
+[03-Jul-2020 10:56:06 UTC] PHP Warning:  include(): Failed opening '..inlude/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/ferroknb/public_html/user/viewattendanceuser.php on line 130
+[03-Jul-2020 11:44:56 UTC] PHP Warning:  include(..inlude/footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/viewattendanceuser.php on line 130
+[03-Jul-2020 11:44:56 UTC] PHP Warning:  include(..inlude/footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/viewattendanceuser.php on line 130
+[03-Jul-2020 11:44:56 UTC] PHP Warning:  include(): Failed opening '..inlude/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/ferroknb/public_html/user/viewattendanceuser.php on line 130
+[03-Jul-2020 14:45:50 UTC] PHP Warning:  include(../footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/vieweid.php on line 73
+[03-Jul-2020 14:45:50 UTC] PHP Warning:  include(../footer.php): failed to open stream: No such file or directory in /home/ferroknb/public_html/user/vieweid.php on line 73
+[03-Jul-2020 14:45:50 UTC] PHP Warning:  include(): Failed opening '../footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/ferroknb/public_html/user/vieweid.php on line 73
