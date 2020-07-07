@@ -24,19 +24,17 @@ include ("../include/config.php");
    <br>
    <a class="a_color" href="../include/logout.php"><button type="button" class="btn btn-primary btn-lg">logout</button></a>
 
-   <a class="a_color" href="attendancepanel.php"><button type="button" class="btn btn-primary btn-lg">Take Attendance</button></a>
-   
-   <a class="a_color" href="viewattendanceadmin.php"><button type="button" class="btn btn-primary btn-lg">Today's attendance</button></a>
+ <a class="a_color" href="viewattendanceadmin.php"><button type="button" class="btn btn-primary btn-lg">Today's attendance</button></a>
    
    
    <a class="a_color" href="viewattendanceadminfull.php"><button type="button" class="btn btn-primary btn-lg">complete attendance</button></a>
    
-   <a class="a_color" href="employee.php?insert_employee=insert_employee"><button type="button" class="btn btn-primary btn-lg">Insert New Employee</button></a>
+   <a class="a_color" href="employee.php?insert_employee=insert_employee"><button type="button" class="btn btn-primary btn-lg">Add New user</button></a>
    
-   <a class="a_color" href="insertadmin.php"><button type="button" class="btn btn-primary btn-lg">Insert New Admin</button></a>
+   <a class="a_color" href="insertadmin.php"><button type="button" class="btn btn-primary btn-lg">Add New Admin</button></a>
    
    
-   <a class="a_color" href="employee.php?view_employee=view_employee"><button type="button" class="btn btn-primary btn-lg">View Employee Details</button></a>
+   <a class="a_color" href="employee.php?view_employee=view_employee"><button type="button" class="btn btn-primary btn-lg">View user Details</button></a>
    
    <a class="a_color" href="viewadmin.php?view_admin=view_admin"><button type="button" class="btn btn-primary btn-lg">View Admin Details</button></a>
    
