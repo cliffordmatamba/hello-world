@@ -1,0 +1,129 @@
+<?php include("../include/header.php");?>
+
+
+<div class="container-fluid view_user">
+
+ <div class="col-sm-12">
+  <h2 class="text-center">View Temperature Patterns</h2>
+  <p class="text-center">Enter your ID and submit.</p>
+ </div> 
+ <div class="col-sm-12 user_form_color">
+ 
+  <form class="form-inline" action="" method="post">
+    <div class="form-group">
+      <label for="email">ID:</label>
+      <input type="text" class="form-control" name="eid" placeholder="Enter UID" required>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  
+ </div>  
+</div>
+
+
+
+<?php
+
+ if(isset($_POST['eid'])) {
+	 
+//make connection
+ 
+	
+$con = mysqli_connect('localhost','ferroknb_cliff','Juxby2019/','ferroknb_crypto');
+      
+    if ($con->connect_error){
+        die("connection error");
+    }
+    else{
+        echo "";
+    }
+	
+ ?>	
+ <?php 
+             $Eid = $_POST['eid'];
+	           
+	
+$con = mysqli_connect('localhost','ferroknb_cliff','Juxby2019/','ferroknb_crypto');
+      
+              $result = mysqli_query($con,"SELECT * FROM `attendance_taken` WHERE eid='$Eid'");
+			  $row = mysqli_fetch_array($result);
+			  $total = $row[0];
+			  $today = strval($total);
+              if ($total == 0){
+				  ?>
+			  <script>
+       // window.location = "admin.php?view_employee=view_employee";
+          if(!alert("Eid is wrong.Please reconfirm EID then try again ")){window.location = "viewattendanceuser.php";}
+   
+              </script>	  
+			  <?php } 
+			  
+			  else {
+				  ?>
+ <div class="container-fluid MT-10" style="background-color:lavenderblush";>
+
+          <h1 class="h1_index text-center">Temperature records can be seen below.</h1>
+		   <br>
+		    <a class="a_color" href="user.php"><button type="button" class="btn btn-primary btn-lg">User Dashboard</button></a>
+
+		   <br>
+<h4 class="text-center">users can find there ID here and can use ID to view temperature patterns</h4>
+
+		
+		<table class="table table-striped table-bordered">
+   <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+		<th>Date</th>
+		<th>temp</th>
+		<th>fmask</th>
+
+      </tr>
+    </thead>
+    <tbody>
+		
+ <?php 
+//select database
+$Eid = $_POST['eid'];
+
+$sql="SELECT * FROM `attendance_taken` WHERE eid='$Eid' ORDER BY id ASC";
+
+$record = mysqli_query($con,$sql);
+
+
+while($post=mysqli_fetch_assoc($record)) {
+  
+   ?>
+   
+   
+
+      <tr>
+        <td><?php echo $post['eid']; ?></td>
+        <td><?php echo $post['name']; ?></td>
+		<td><?php echo $post['date']; ?></td>
+		<td><?php echo $post['temp']; ?></td>
+		<td><?php echo $post['fmask']; ?></td>
+
+	   </tr>
+              
+      
+<?php } ?>    
+     </tbody>
+    </table>
+	</div>
+	
+	
+   
+  <?php } ?>
+ 
+ <?php } ?>
+ 
+ <div class="container-fluid">
+	 
+	  
+	 
+
+
+
+<?php include("..inlude/footer.php"); ?>
