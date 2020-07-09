@@ -171,7 +171,7 @@ int send_uid_to_server() {
      
        
      // uid  
-     String str="/firm/get_uid.php?uid=";
+     String str="/arduino/post.php?uid=";
      for (byte i = 0; i < 4; i++) {
         str+=String(cardUID[i],HEX);
      }
