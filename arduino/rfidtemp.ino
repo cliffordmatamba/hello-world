@@ -1,5 +1,3 @@
-
-//  
 #include <Wire.h>
 #include <Adafruit_MLX90614.h>
 #include <Adafruit_GFX.h>
@@ -14,10 +12,10 @@ MFRC522 mfrc522(7, 6);
 WiFiClient client;
 // your network SSID (name)
 // and password (WPA)
-char ssid[] = "my_DLink";        
-char pass[] = "marina11";  
+char ssid[] = "juxby";        
+char pass[] = "00000011";  
 // name address 
-char server[] = "www.freeparkovka.ru";    
+char server[] = "www.ferroelectrical.co.za";    
 
 int pinRelay=5;
 int status = WL_IDLE_STATUS;  
@@ -35,22 +33,8 @@ void setup() {
   // relay
   pinMode(pinRelay,OUTPUT);
   digitalWrite(pinRelay,LOW);
-  //  
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.clearDisplay();
-  display.display();
-  //   MLX90614
-  mlx.begin(); 
-  //  SPI
-  SPI.begin();
-  //  MFRC522
-  mfrc522.PCD_Init();
-  Serial.println("connect WiFi ....");
-  display.setCursor(10,10);
-  display.print(F("Connect WiFi"));
-  display.display();
+
+
 
   // check for the presence of the shield:
   if (WiFi.status() == WL_NO_SHIELD) {
@@ -155,33 +139,7 @@ void loop() {
          res=5;
          delay(2000);
          break;
-     case 5:  //    
-         display.clearDisplay();
-         display.setCursor(10,10);
-         display.print(F("Temp="));
-         display.print(temp);
-         display.print(F("*C"));
-         display.setCursor(10,20);
-         if(temp<37.5) { // OPEN
-            display.print(F("OPEN"));     
-            Serial.println("OPEN");
-            digitalWrite(pinRelay,HIGH);
-         }
-         else {  // CLOSE
-            display.print(F("CLOSE"));     
-            display.setCursor(10,0);
-            display.print(F("Temp high!!!"));     
-            Serial.println("CLOSE");
-            Serial.println("Temp high!!!");
-            digitalWrite(pinRelay,LOW);
-         }
-        display.display();
-        delay(3000);
-        Serial.println("Wait RFID ....");
-        res=0;
-        break;
-     default:
-        break;
+     
   }
 }
 
@@ -210,8 +168,8 @@ int send_uid_to_server() {
    char s;
    client.stop();
    if (client.connect(server, 80)) {
-     ////     narodmon.ru
-     //  
+     
+       
      // uid  
      String str="/firm/get_uid.php?uid=";
      for (byte i = 0; i < 4; i++) {
@@ -219,7 +177,7 @@ int send_uid_to_server() {
      }
      Serial.print("str=");Serial.println(str);
      client.println("GET "+str+" HTTP/1.1");
-     client.println("Host: freeparkovka.ru");
+     client.println("Host: ferroelectrical.co.za");
      client.println("User-Agent: ArduinoWiFi/1.1");
      client.println("Connection: close");
      client.println();
@@ -261,8 +219,7 @@ int send_uid_to_server() {
 void send_temp_to_server() {
    client.stop();
    if (client.connect(server, 80)) {
-     ////     narodmon.ru
-     //  
+    
      // uid  
      String str="/firm/get_temp.php?uid=";
      for (byte i = 0; i < 4; i++) {
@@ -271,7 +228,7 @@ void send_temp_to_server() {
      str+="&temp="+String(temp);
      Serial.print("str=");Serial.println(str);
      client.println("GET "+str+" HTTP/1.1");
-     client.println("Host: freeparkovka.ru");
+     client.println("Host: ferroelectrical.co.za");
      client.println("User-Agent: ArduinoWiFi/1.1");
      client.println("Connection: close");
      client.println();
@@ -297,11 +254,5 @@ int command(char* arr) {
     }
     return 3;
 }
-//   
-void send_display(String str) {
-   display.clearDisplay();
-   display.setCursor(10,10);
-   display.print(str);
-   display.display();
-}
+
 
